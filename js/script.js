@@ -17,6 +17,11 @@
   }
 
   /* add class 'active' to the clicked link */
+  const activeArticles = document.querySelectorAll('.active');
+
+  for(let activeArticle of activeArticles){
+    activeArticle.classList.remove('active');
+  }
 
   /* remove class 'active' from all articles */
 
