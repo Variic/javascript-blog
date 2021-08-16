@@ -24,7 +24,7 @@
     clickedElement.classList.add('active');
 
   /* [DONE] remove class 'active' from all articles */
-  const activeArticles = document.querySelectorAll('.posts article.active');
+  const activeArticles = document.querySelectorAll('article');
 
   for(let activeArticle of activeArticles){
       activeArticle.classList.remove('active');
@@ -35,14 +35,14 @@
     console.log('Link was clicked', articleSelect);
 
   /* [IN PROGRESS] find the correct article using the selector (value of 'href' attribute) */
-  const articleTarget = document.querySelector('articleSelect');
+  const articleTarget = document.querySelector(articleSelect);
     console.log('The selected article is', articleTarget);
 
   /* [IN PROGRESS] add class 'active' to the correct article */
   const clickedArticle = this;
     console.log('clickedArticle:', articleTarget);
 
-    clickedArticle.classList.add('active');
+    articleTarget.classList.add('active');
 
 }
 
