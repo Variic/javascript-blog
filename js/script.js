@@ -79,13 +79,12 @@ function generateTitleLinks(){
       console.log('Show articles title', articleTitle);
 
 /* For each article based on this information, create the HTML code for the link and save it to a const */
-    const linkHtml = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
-      console.log('Show generated HTML link!', linkHtml);
+  const linkHtml = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+    console.log('Show generated HTML link!', linkHtml);
 
 /* For each article insert the created HTML code into the link list in the left column */
-      let html = linkHtml;
-      var d1 = document.getElementById('one');
-      d1.insertAdjacentHTML('afterend', '<div id="two">two</div>');
+  const html = document.querySelector('.titles');
+  html.insertAdjacentHTML('afterend', linkHtml);
 
   }
 }
