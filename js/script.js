@@ -45,7 +45,6 @@
     console.log('clickedArticle:', articleTarget);
 
     articleTarget.classList.add('active');
-
 }
 
   const optArticleSelector = '.post',
@@ -84,12 +83,8 @@
       /* insert link into html variable */
       html = html + linkHtml;
         console.log('Show full HTML!', html);
+      titleList.innerHTML = html;
    }
-
-    /*titleList.innerHTML = html;*/
-    const fullHtml = document.querySelector('.titles');
-    fullHtml.insertAdjacentHTML('afterend', html);
-
     const links = document.querySelectorAll('.titles a');
       console.log('What we have on LINKS', links);
 
@@ -99,5 +94,4 @@
   }
 
   generateTitleLinks();
-
 }
