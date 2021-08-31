@@ -26,7 +26,7 @@
     clickedElement.classList.add('active');
 
   /* [DONE] remove class 'active' from all articles */
-  const activeArticles = document.querySelectorAll('article');
+  const activeArticles = document.querySelectorAll('article'); /*ROZNICA*/
 
   for(let activeArticle of activeArticles){
       activeArticle.classList.remove('active');
@@ -41,56 +41,69 @@
     console.log('The selected article is', articleTarget);
 
   /* [IN PROGRESS] add class 'active' to the correct article */
-  const clickedArticle = this;
-    console.log('clickedArticle:', articleTarget);
-
     articleTarget.classList.add('active');
 }
 
-  const optArticleSelector = '.post',
-    optTitleSelector = '.post-title',
-    optTitleListSelector = '.titles';
 
-  function generateTitleLinks(){
+
+  const generateTitleLinks = function(){/*ROZNICA*/
+        console.log('Title was clicked');
+
+
     /* remove contents of titleList */
-    const titleList = document.querySelector(optTitleListSelector).innerHTML = '';
-      console.log('Show title list!', titleList);
+    const titleList = document.querySelector('ul.list');/*ROZNICA*/
+      console.log(titleList);
+      titleList.innerHTML= "";
+
 
     /* find all the articles and save them to variable: articles */
-    const articles = document.querySelectorAll(optArticleSelector);
+    const articles = document.querySelectorAll('.post');/*ROZNICA*/
       console.log('Show posts list!', articles);
 
-   let html = '';
+    let html = '';
 
     for(let article of articles){
       console.log('Show let HTML!', html);
+
+
       /* get the article id */
       const articleId = article.getAttribute("id");
         console.log('Show articles ID', articleId);
+
 
       /* find the title element */
       const titleList = document.querySelector('.titles');
         console.log('Show title element!', titleList);
 
+
       /* get the title from the title element */
-      const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+      const articleTitle = article.querySelector('h3.post-title').innerHTML;/*ROZNICA*/
         console.log('Show articles title', articleTitle);
+
 
       /* create HTML of the link */
       const linkHtml = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
         console.log('Show generated HTML link!', linkHtml);
 
+
       /* insert link into html variable */
       html = html + linkHtml;
         console.log('Show full HTML!', html);
+    }
+
       titleList.innerHTML = html;
-   }
+
+/*----------------------------------------------*/
+
     const links = document.querySelectorAll('.titles a');
       console.log('What we have on LINKS', links);
 
     for(let link of links){
       link.addEventListener('click', titleClickHandler);
     }
+
+/*----------------------------------------------*/
+
   }
 
   generateTitleLinks();
